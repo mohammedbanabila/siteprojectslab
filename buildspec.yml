@@ -7,10 +7,10 @@ phases:
 
   build:
    commands:
-    - echo build docker-image    
-    - echo tag docker-image to be latest  
-    - docker build -t $IMAGENAME:$IMAGETAG .
-    - docker tag $IMAGENAME:$IMAGETAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGENAME:$IAMGETAG
+     - echo build docker-image    
+     - echo tag docker-image to be latest  
+     - docker build -t $IMAGENAME:$IMAGETAG .
+     - docker tag $IMAGENAME:$IMAGETAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGENAME:$IAMGETAG
       
   post_build:
     commands:
