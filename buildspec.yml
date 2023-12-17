@@ -3,16 +3,16 @@ phases:
   pre_build:
     commands:
      - echo logging in to ECR
-     - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID:$REPOLIST
+     - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.$REPOLIST
 
   build:
    commands:
     - echo build docker-image    
     - echo tag docker-image to be latest  
     - docker build -t $IMAGENAME:$IMAGETAG .
-    - docker tag $IMAGENAME:$IMAGETAG $AWS_ACCOUNT_ID:$REPOLIST/$IMAGENAME:$IAMGETAG
+    - docker tag $IMAGENAME:$IMAGETAG $AWS_ACCOUNT_ID.$REPOLIST/$IMAGENAME:$IAMGETAG
       
   post_build:
     commands:
      - echo push to ECR
-     - docker push $AWS_ACCOUNT_ID:$REPOLIST/$IMAGENAME:$IAMGETAG
+     - docker push $AWS_ACCOUNT_ID.$REPOLIST/$IMAGENAME:$IAMGETAG
