@@ -1,2 +1,3 @@
-FROM  odoo:latest
-EXPOSE 8069
+FROM  wordpress:latest
+
+EXPOSE 80
