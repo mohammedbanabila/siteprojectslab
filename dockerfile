@@ -1,3 +1,5 @@
 FROM  wordpress:latest
 
-EXPOSE 80
+VOLUME [ "/var/www/html/" ]
+
+EXPOSE 6000
