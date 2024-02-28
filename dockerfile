@@ -1,5 +1,5 @@
 FROM  wordpress:latest
 
-VOLUME [ "/var/www/html/" ]
+VOLUME ["/var/www/html"]
 
 EXPOSE 6000
