@@ -1,7 +1,7 @@
 FROM wordpress:latest
 
 
-VOLUME [ "/var/www/hrml" ]
+VOLUME [ "/var/www/html" ]
 
 
-EXPOSE 80
+EXPOSE 8000
